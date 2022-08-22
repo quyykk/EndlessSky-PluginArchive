@@ -13,14 +13,16 @@ jobs:
       - name: Analyse changed plugins
         id: files
         uses: tj-actions/changed-files@v28.0.0
+        with:
+          separator: '%%%'
       - name: Zip changed plugins
         run: |
           import os
           import subprocess
 
-          changed = "${{ steps.files.outputs.all_changed_files }}"
+          changed = "${{ steps.files.outputs.all_changed_and_modified_files }}"
           plugins = set()
-          for f in changed.split():
+          for f in changed.split("%%%"):
             if not "All Plugins" in f:
               continue
 
