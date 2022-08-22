@@ -26,7 +26,7 @@ jobs:
             if not "All Plugins" in f:
               continue
 
-            path = f.split(os.pathsep)
+            path = f.split(os.sep)
             index = path.index("All Plugins") + 1
             if index >= len(path):
               continue
