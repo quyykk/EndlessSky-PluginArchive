@@ -28,7 +28,7 @@ jobs:
               continue
             plugins.add(path[index])
 
-          if a:
+          if plugins:
             print("The following plugins have changed:")
             for p in plugins:
               print(a)
