@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
       - name: Analyse changed plugins
         id: files
         uses: tj-actions/changed-files@v28.0.0
